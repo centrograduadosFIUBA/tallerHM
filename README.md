@@ -29,6 +29,8 @@ git push
 
 ## Ariel Alegre
 Hoy aprendí que Git y GitHub no son solo herramientas para programadores — son herramientas de colaboración para cualquier persona que trabaje con archivos. Y que con una IA al lado, la barrera de entrada desaparece.
+## Edgar Lopez
+Saludos!
 
 ## Ariel Alegre
 Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs y GitHub. Hoy lo viví en primera persona: en pocas horas armamos un taller, un repo, una web, páginas personales y un libro compartido — todo sin saber HTML, solo describiendo lo que queríamos. La IA no reemplaza la creatividad, la amplifica.
