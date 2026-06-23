@@ -33,4 +33,8 @@ Hoy aprendí que Git y GitHub no son solo herramientas para programadores — so
 ## Ariel Alegre
 Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs y GitHub. Hoy lo viví en primera persona: en pocas horas armamos un taller, un repo, una web, páginas personales y un libro compartido — todo sin saber HTML, solo describiendo lo que queríamos. La IA no reemplaza la creatividad, la amplifica.
 
-<!-- Agregá tu capítulo acá — copiá el bloque de arriba y completá con tu nombre y tu experiencia -->
+## Daniela Bentancor
+Hoy aprendí a Actualizar Git en Windows desde la versión 2.47 utilizando `winget` o el instalador oficial.
+- Crear una cuenta en GitHub y entender que la interfaz no está completamente en español (se puede usar el traductor del navegador).
+- Identificar mi nombre de usuario en GitHub: **DanielaBentancor**.
+- Hacer un **fork** del repositorio `centrograduadosFIUBA/tallerHM` y clonar mi copia en mi computadora.
