@@ -36,5 +36,4 @@ Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs 
 <!-- Agregá tu capítulo acá — copiá el bloque de arriba y completá con tu nombre y tu experiencia -->
 
 ## Carlos Muslera
-Gracias al equipo de CGFIUBA y su paciencia y claridad, hoy pudimos hacer esta tarea.
-Espero poder llevar adelante más proyectos y aprender a usar estas herramientas increíbles.
+Gracias a este equipo de CGFIUBA por la claridad y la paciencia. Estamos aprendiendo a manejar estas herramientas increíbles.
