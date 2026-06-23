@@ -34,3 +34,6 @@ Hoy aprendí que Git y GitHub no son solo herramientas para programadores — so
 Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs y GitHub. Hoy lo viví en primera persona: en pocas horas armamos un taller, un repo, una web, páginas personales y un libro compartido — todo sin saber HTML, solo describiendo lo que queríamos. La IA no reemplaza la creatividad, la amplifica.
 
 <!-- Agregá tu capítulo acá — copiá el bloque de arriba y completá con tu nombre y tu experiencia -->
+
+##Julian Cichocki
+Hoy aprendi que Git sirve para trabajar con los "repos" que hasta hoy no sabia lo que eran, y que se pueden hacer interfaces sin saber lenguaje de programacion. Esta bueno.
