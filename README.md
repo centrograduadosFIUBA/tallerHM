@@ -30,7 +30,7 @@ git push
 ## Ariel Alegre
 Hoy aprendí que Git y GitHub no son solo herramientas para programadores — son herramientas de colaboración para cualquier persona que trabaje con archivos. Y que con una IA al lado, la barrera de entrada desaparece.
 
-## Ariel Alegre
-Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs y GitHub. Hoy lo viví en primera persona: en pocas horas armamos un taller, un repo, una web, páginas personales y un libro compartido — todo sin saber HTML, solo describiendo lo que queríamos. La IA no reemplaza la creatividad, la amplifica.
+## Carla Rodriguez
+Hoy logré instalar Git, crear mi cuenta de GitHub y entender para qué sirve un repositorio. Me llevo una experiencia muy positiva sobre cómo empezar a organizar y resguardar mis trabajos en equipo.
 
 <!-- Agregá tu capítulo acá — copiá el bloque de arriba y completá con tu nombre y tu experiencia -->
