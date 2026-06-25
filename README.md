@@ -63,3 +63,6 @@ Hoy tuvimos una buena clase de Git y GitHub, empezando por la instalación de la
 
 ## Carlos Muslera
 Gracias a este equipo de CGFIUBA por la claridad y la paciencia. Estamos aprendiendo a manejar estas herramientas increíbles.
+
+## Leonardo Cabral
+Por fin aprendiendo a clonar repositorios de github. Gracias al CGFIUBA por su dedicacion y ayuda. Era una deuda que tenia apreneder git y github, ahora a seguir viendo la clase grabada porque no pude asistir en vivo
