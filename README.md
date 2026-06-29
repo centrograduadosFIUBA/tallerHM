@@ -63,3 +63,7 @@ Hoy tuvimos una buena clase de Git y GitHub, empezando por la instalación de la
 
 ## Carlos Muslera
 Gracias a este equipo de CGFIUBA por la claridad y la paciencia. Estamos aprendiendo a manejar estas herramientas increíbles.
+
+## Nenia Hidalgo NENIA34
+Estoy aprendiendo a manejar esta utilísima herramienta de Github, 
+si se la sabe usar. 
