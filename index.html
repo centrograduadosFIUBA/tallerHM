@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller: Hola Mundo con Git, GitHub e IA - Comunidad FIUBA</title>
+  <meta name="description" content="Aprende las bases del control de versiones con Git, la colaboración en GitHub y cómo potenciar tu desarrollo con Inteligencia Artificial. Pensado para principiantes.">
+  
+  <!-- Enlace a los estilos premium -->
+  <link rel="stylesheet" href="index.css">
+  
+  <!-- Icono favicon decorativo rápido -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">FI</div>
+        <div class="logo-text">Comunidad <span>FIUBA</span></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#conceptos">Conceptos</a></li>
+          <li><a href="#workflow">Simulador</a></li>
+          <li><a href="#aventura">Tu Aventura</a></li>
+          <li><a href="#copiloto">Copiloto IA</a></li>
+          <li><a href="#participantes">Participantes</a></li>
+          <li><a href="#libro">Libro</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero container">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Taller Práctico: Hola Mundo
+    </div>
+    <h1>El Arte de Crear Software con<br><span>Asistentes de IA y Git</span></h1>
+    <p>
+      Bienvenido al taller de Git y GitHub de la Comunidad FIUBA. Aquí aprenderás a usar las herramientas clave del desarrollo moderno de forma práctica, colaborativa y asistido por Inteligencia Artificial.
+    </p>
+    <div class="cta-group">
+      <a href="#aventura" class="btn btn-primary">Elegir mi camino</a>
+      <a href="#workflow" class="btn btn-secondary">Probar Simulador Git</a>
+    </div>
+  </section>
+
+  <!-- CONCEPTOS CLAVE -->
+  <section id="conceptos" class="container">
+    <div class="section-header">
+      <h2>💡 Conceptos Clave</h2>
+      <p>Entiende los pilares de la programación moderna antes de tocar el primer archivo.</p>
+    </div>
+    
+    <div class="concept-grid">
+      <!-- Tarjeta Git -->
+      <div class="card card-cyan">
+        <div class="card-icon card-icon-cyan">⏳</div>
+        <h3>¿Qué es Git?</h3>
+        <p>
+          Es la <strong>máquina del tiempo</strong> para tus archivos. Un sistema local que registra cada cambio que haces en tu proyecto, permitiéndote volver al pasado si algo sale mal.
+        </p>
+        <ul class="card-bullets">
+          <li>Controla versiones de tus archivos</li>
+          <li>Evita los temidos "archivo_final_v2_final.zip"</li>
+          <li>Funciona de forma local en tu computadora</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta GitHub -->
+      <div class="card card-violet">
+        <div class="card-icon card-icon-violet">☁️</div>
+        <h3>¿Qué es GitHub?</h3>
+        <p>
+          Es la <strong>nube colaborativa</strong> y red social para tus repositorios de Git. El lugar donde compartes tu trabajo con el mundo y colaboras con otros programadores en tiempo real.
+        </p>
+        <ul class="card-bullets">
+          <li>Resguarda tu código de forma segura en la nube</li>
+          <li>Facilita el trabajo en equipos distribuidos</li>
+          <li>Muestra tu portafolio personal al mundo</li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta IA Asistida -->
+      <div class="card card-pink">
+        <div class="card-icon card-icon-pink">🤖</div>
+        <h3>IA en Programación</h3>
+        <p>
+          Es tu <strong>copiloto inteligente</strong>. Los agentes de IA (como Claude Code, Antigravity, etc.) te ayudan a escribir código, corregir errores y explicar comandos de Git sin frustrarte.
+        </p>
+        <ul class="card-bullets">
+          <li>Escribe código a partir de tus ideas</li>
+          <li>Explica líneas complejas de programación</li>
+          <li>Te guía paso a paso cuando te trabas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR INTERACTIVO DE GIT -->
+  <section id="workflow" class="container">
+    <div class="section-header">
+      <h2>🔄 El Flujo de Trabajo en Git</h2>
+      <p>Mira cómo viajan tus archivos desde tu computadora local hasta la nube en GitHub. ¡Haz clic en los comandos del simulador para verlo en acción!</p>
+    </div>
+
+    <div class="visualizer-card">
+      <!-- Controles del simulador -->
+      <div class="simulator-controls">
+        <button id="btn-status" class="btn-cmd">git status</button>
+        <button id="btn-add" class="btn-cmd">git add .</button>
+        <button id="btn-commit" class="btn-cmd" disabled>git commit -m "..."</button>
+        <button id="btn-push" class="btn-cmd" disabled>git push</button>
+        <button id="btn-reset-sim" class="btn-cmd" style="border-color: rgba(239, 68, 68, 0.3); color: #f87171;">Reiniciar</button>
+      </div>
+
+      <!-- Visualización de Nodos -->
+      <div class="visualizer-steps">
+        <!-- Nodo 1: Working Directory -->
+        <div id="node-working" class="vis-step active step-working">
+          <div class="vis-node">💻</div>
+          <div class="vis-label">Directorio Local</div>
+          <div class="vis-desc">Tus archivos modificados en tu PC.</div>
+        </div>
+        
+        <!-- Nodo 2: Staging Area -->
+        <div id="node-staging" class="vis-step step-staging">
+          <div class="vis-node">📦</div>
+          <div class="vis-label">Staging Area</div>
+          <div class="vis-desc">El área de preparación para el envío.</div>
+        </div>
+        
+        <!-- Nodo 3: Local Repo -->
+        <div id="node-local" class="vis-step step-local">
+          <div class="vis-node">💾</div>
+          <div class="vis-label">Repo Local (Git)</div>
+          <div class="vis-desc">El historial guardado en tu PC.</div>
+        </div>
+        
+        <!-- Nodo 4: Remote GitHub -->
+        <div id="node-remote" class="vis-step step-remote">
+          <div class="vis-node">🚀</div>
+          <div class="vis-label">Nube (GitHub)</div>
+          <div class="vis-desc">Repositorio público en internet.</div>
+        </div>
+      </div>
+
+      <!-- Consola de comandos simulada -->
+      <div class="simulator-console">
+        <div class="console-header">
+          <div class="console-dot console-dot-red"></div>
+          <div class="console-dot console-dot-yellow"></div>
+          <div class="console-dot console-dot-green"></div>
+        </div>
+        <div id="console-content" class="console-content">
+          <div class="console-line"><span class="console-prompt">taller-git@fiuba:~$</span> <span class="console-command"># Bienvenido al simulador interactivo de Git.</span></div>
+          <div class="console-line"><span class="console-prompt">taller-git@fiuba:~$</span> <span class="console-command"># Haz cambios y ejecuta comandos arriba para ver qué sucede.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGE TU AVENTURA (Los Caminos) -->
+  <section id="aventura" class="container">
+    <div class="section-header">
+      <h2>🛤️ Elige tu Aventura</h2>
+      <p>Todos contribuiremos al mismo repositorio en vivo, pero tú decides con qué tipo de archivo experimentar.</p>
+    </div>
+
+    <div class="adventure-cards">
+      <!-- Opción A: Python -->
+      <div class="adv-card">
+        <div class="adv-header">
+          <span class="adv-badge badge-py">Opción A (Python)</span>
+          <div class="adv-icon">🐍</div>
+        </div>
+        <h3>hola_mundo.py</h3>
+        <p>
+          Especial para quienes quieren dar sus primeros pasos escribiendo código de programación lógico. Modificarás un script que interactúa con la terminal.
+        </p>
+        <div class="adv-steps">
+          <div class="adv-step-item">
+            <div class="adv-step-num">1</div>
+            <div class="adv-step-text">Abre <code>hola_mundo.py</code>.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">2</div>
+            <div class="adv-step-text">Usa la IA para personalizar el saludo o agregar lógica simple.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">3</div>
+            <div class="adv-step-text">Pruébalo en la consola ejecutando: <code>python hola_mundo.py</code>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opción B: HTML/CSS (Esta página) -->
+      <div class="adv-card">
+        <div class="adv-header">
+          <span class="adv-badge badge-html">Opción B (HTML/CSS)</span>
+          <div class="adv-icon">🎨</div>
+        </div>
+        <h3>index.html</h3>
+        <p>
+          Ideal para mentes visuales. Tu objetivo es sumarte a la lista de participantes abajo modificando el código de esta página web, o retocar sus estilos.
+        </p>
+        <div class="adv-steps">
+          <div class="adv-step-item">
+            <div class="adv-step-num">1</div>
+            <div class="adv-step-text">Abre <code>index.html</code>.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">2</div>
+            <div class="adv-step-text">Busca la sección de participantes y duplica el bloque con tus datos.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">3</div>
+            <div class="adv-step-text">Haz doble clic en <code>index.html</code> para verlo en tu navegador.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opción C: README.md -->
+      <div class="adv-card">
+        <div class="adv-header">
+          <span class="adv-badge badge-md">Opción C (Documentación)</span>
+          <div class="adv-icon">📝</div>
+        </div>
+        <h3>README.md</h3>
+        <p>
+          Para los que quieren entender el flujo de Git sin escribir código. Editarás la documentación principal del repositorio usando formato Markdown.
+        </p>
+        <div class="adv-steps">
+          <div class="adv-step-item">
+            <div class="adv-step-num">1</div>
+            <div class="adv-step-text">Abre <code>README.md</code> en tu editor de texto.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">2</div>
+            <div class="adv-step-text">Ve a la lista de participantes al final del archivo.</div>
+          </div>
+          <div class="adv-step-item">
+            <div class="adv-step-num">3</div>
+            <div class="adv-step-text">Agrega una nueva línea con tu nombre de usuario de GitHub.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN COPILOTO DE IA -->
+  <section id="copiloto" class="container">
+    <div class="ia-guide">
+      <div class="ia-guide-content">
+        <div>
+          <div class="ia-badge">✨ PROGRAMACIÓN ASISTIDA</div>
+          <h2 class="ia-title">Cómo usar tu <span>Copiloto de IA</span></h2>
+          <p class="ia-intro">
+            Durante este taller, no estás solo. Los asistentes de IA pueden ayudarte a entender código, escribir cambios y guiarte con Git.
+          </p>
+          
+          <div class="prompt-box">
+            <div class="prompt-header">
+              <span>Prompt recomendado para empezar:</span>
+              <button class="prompt-copy-btn" onclick="copyPrompt()">📋 Copiar</button>
+            </div>
+            <p id="prompt-text" class="prompt-text">
+              "Estoy participando en un taller de Git y elegí la Opción B de HTML/CSS. Ayúdame a agregar una tarjeta de participante con mi nombre (Juan Pérez) y un avatar divertido en index.html. Explícame el cambio."
+            </p>
+          </div>
+        </div>
+
+        <div class="ia-features">
+          <!-- Feature 1 -->
+          <div class="ia-feature-card">
+            <div class="ia-feat-icon">❓</div>
+            <div>
+              <div class="ia-feat-title">Pregunta sin Miedo</div>
+              <div class="ia-feat-desc">Si no entiendes un comando o te da un error, pégalo en el chat de la IA y pídele: "Explicame qué significa este error y cómo resolverlo".</div>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="ia-feature-card">
+            <div class="ia-feat-icon">💡</div>
+            <div>
+              <div class="ia-feat-title">Genera Ideas Creativas</div>
+              <div class="ia-feat-desc">Pídele a la IA sugerencias visuales o lógicas para que tu aporte al taller sea único. Puedes cambiar fuentes, gradientes o funciones.</div>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="ia-feature-card">
+            <div class="ia-feat-icon">🛠️</div>
+            <div>
+              <div class="ia-feat-title">Escribe y Ejecuta Comandos</div>
+              <div class="ia-feat-desc">Los agentes de IA modernos pueden ayudarte a correr comandos en tu terminal local directamente, facilitando el git add, commit y push.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTES DEL TALLER (Espacio interactivo para los alumnos) -->
+  <section id="participantes" class="container">
+    <div class="section-header">
+      <h2>🎉 Participantes del Taller</h2>
+      <p>¡Mira quiénes ya se sumaron y completaron el taller! Si eliges la Opción B, puedes agregar tu propia tarjeta editando este archivo.</p>
+    </div>
+    
+    <div class="participantes-grid">
+      
+      <!-- EJEMPLO DE TARJETA:
+           Para sumarte, copia el siguiente bloque, pégalo ABAJO de este comentario y modifícalo con tus datos:
+           
+      <div class="participante-card">
+        <div class="part-avatar">🦊</div>
+        <h3>Tu Nombre y Apellido</h3>
+        <p>Tu rol / Pasatiempo / Carrera</p>
+        <span class="part-badge badge-html">Aporte con HTML</span>
+      </div>
+      -->
+      
+      <!-- Tarjeta del Tutor del Taller -->
+      <div class="participante-card">
+        <div class="part-avatar">🚀</div>
+        <h3>Tutor Comunidad FIUBA</h3>
+        <p>Organizador y Guía</p>
+        <span class="part-badge badge-fiuba">Comunidad</span>
+      </div>
+
+      <div class="participante-card">
+        <div class="part-avatar">🎓</div>
+        <h3>Ariel Alegre</h3>
+        <p>Director del Centro de Graduados FIUBA</p>
+        <span class="part-badge badge-fiuba">Organizador</span>
+      </div>
+
+      <div class="participante-card">
+        <div class="part-avatar">😊</div>
+        <h3>Ariel</h3>
+        <p>Ingeniero</p>
+        <span class="part-badge badge-html">Aporte con HTML</span>
+        <br>
+        <a href="/ariel.html" style="color:#7c3aed; font-size:0.85rem; margin-top:0.5rem; display:inline-block;">Ver mi página →</a>
+      </div>
+
+      <div class="participante-card">
+        <div class="part-avatar">🦅</div>
+        <h3>Alumno Estrella</h3>
+        <p>Marketer — Cuervo hasta el cajón</p>
+        <span class="part-badge badge-html">Aporte con HTML</span>
+        <br>
+        <a href="/alumno-estrella.html" style="color:#7c3aed; font-size:0.85rem; margin-top:0.5rem; display:inline-block;">Ver mi página →</a>
+      </div>
+
+      <div class="participante-card">
+        <div class="part-avatar">🔌</div>
+        <h3>Gustavo</h3>
+        <p>Electrónica</p>
+        <span class="part-badge badge-html">Aporte con HTML</span>
+        <br>
+        <a href="/gustavo.html" style="color:#7c3aed; font-size:0.85rem; margin-top:0.5rem; display:inline-block;">Ver mi página →</a>
+      </div>
+
+      <!-- AGREGAR NUEVAS TARJETAS DE ALUMNOS AQUÍ -->
+
+    </div>
+  </section>
+
+  <!-- LIBRO COLABORATIVO -->
+  <section id="libro" class="container">
+    <div class="section-header">
+      <h2>📖 Lo que aprendimos hoy</h2>
+      <p>Un libro escrito en vivo por todos los participantes del taller. Cada capítulo es una voz.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question"><span>Ariel Alegre</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Hoy aprendí que Git y GitHub no son solo herramientas para programadores — son herramientas de colaboración para cualquier persona que trabaje con archivos. Y que con una IA al lado, la barrera de entrada desaparece.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Ariel Alegre</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Es apasionante el potencial creativo que tiene el trabajo colaborativo con LLMs y GitHub. Hoy lo viví en primera persona: en pocas horas armamos un taller, un repo, una web, páginas personales y un libro compartido — todo sin saber HTML, solo describiendo lo que queríamos. La IA no reemplaza la creatividad, la amplifica.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Carla Rodriguez</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Hoy logré instalar Git, crear mi cuenta de GitHub y entender para qué sirve un repositorio. Me llevo una experiencia muy positiva sobre cómo empezar a organizar y resguardar mis trabajos en equipo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Simon Armando</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Intentando aprender. No viene fácil!</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Juan Pérez</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Es la primera vez que uso todo eso - Espero seguir aprendiendo</p></div>
+        </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Nenia Hidalgo</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Necesito repaso de GitHub. Entretenido!!</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Claude Code</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Soy la IA que ayudó a armar este taller. Lo que más me impresiona es cómo personas sin experiencia técnica logran publicar algo en internet en menos de una hora. La tecnología está para servir a las personas, no al revés.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Gustavo</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Generé gustavo.html basado en ariel.html. Incluye un emoji relacionado a electrónica (🔌) y un saludo personalizado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Renata Vercesi</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Hoy aprendi a utilizar github</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Julian Cichocki</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Hoy aprendi que Git sirve para trabajar con los "repos" que hasta hoy no sabia lo que eran, y que se pueden hacer interfaces sin saber lenguaje de programacion. Esta bueno.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Claudio Tarqui</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Soy Claudio modificando</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Walter Damian Mompo</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Hoy tuvimos una buena clase de Git y GitHub, empezando por la instalación de la herramienta y el fork del repositorio.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>Carlos Muslera</span><span class="faq-icon">↓</span></button>
+        <div class="faq-answer"><p>Gracias a este equipo de CGFIUBA por la claridad y la paciencia. Estamos aprendiendo a manejar estas herramientas increíbles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="container">
+    <div class="section-header">
+      <h2>❓ Preguntas Frecuentes</h2>
+      <p>Respuestas rápidas para destrabar tus dudas durante el taller.</p>
+    </div>
+
+    <div class="faq-list">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué pasa si me equivoco al escribir un comando?</span>
+          <span class="faq-icon">↓</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            ¡No te preocupes! Git registra todo, pero no daña tu computadora. La mayoría de los errores comunes se solucionan volviendo a escribir el comando correctamente, o bien puedes pedirle ayuda a tu Copiloto de IA: <em>"Ejecuté el comando X y obtuve el error Y, ¿cómo lo soluciono?"</em>.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué es un "conflicto" en Git y cómo se resuelve?</span>
+          <span class="faq-icon">↓</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Un conflicto ocurre cuando dos participantes modifican la misma línea del mismo archivo al mismo tiempo y Git no sabe cuál conservar. En el taller lo resolveremos juntos en vivo usando el editor de código, donde podrás elegir si dejas tu versión, la de tu compañero, o combinas ambas. ¡Es una parte normal y muy común del trabajo en equipo!
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Necesito instalar Git para ver mis cambios locales?</span>
+          <span class="faq-icon">↓</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Para editar y ver los cambios visuales de <code>index.html</code> en tu navegador, solo necesitas abrirlos haciendo doble clic. Sin embargo, para <strong>subir</strong> y compartir tu aporte con toda la Comunidad FIUBA, sí necesitas tener instalado Git para poder ejecutar los comandos de envío (<code>add</code>, <code>commit</code> y <code>push</code>).
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Puedo usar la IA para que escriba todo el código por mí?</span>
+          <span class="faq-icon">↓</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Sí, los agentes de IA son excelentes generando borradores de código. Pero recuerda que tú eres el supervisor. El objetivo de este taller es que entiendas qué está pasando, cómo interactúan los archivos y cómo se conectan con Git. La IA escribe el código, pero tú conduces el flujo de trabajo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-copy">
+        © 2026 Comunidad FIUBA. Taller de Git, GitHub e IA.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/centrograduadosFIUBA" target="_blank">GitHub Centro de Graduados</a>
+        <a href="https://github.com/centrograduadosFIUBA/tallerHM.git" target="_blank">Repositorio del Taller</a>
+        <a href="https://github.com/centrograduadosFIUBA/tallerHM#lo-que-aprendí-hoy" target="_blank">📖 Lo que aprendimos hoy</a>
+        <a href="https://git-scm.com/" target="_blank">Git Oficial</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LÓGICA DE INTERACTIVIDAD (JAVASCRIPT) -->
+  <script>
+    // 1. Efecto Glow de Seguimiento del Mouse para las Tarjetas
+    const cards = document.querySelectorAll('.card, .adv-card, .participante-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // 2. Acordeón de Preguntas Frecuentes
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Cerrar todos los demás items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Alternar el item actual
+        if (isActive) {
+          item.classList.remove('active');
+        } else {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // 3. Copiar Prompt de IA al Portapapeles
+    function copyPrompt() {
+      const promptText = document.getElementById('prompt-text').innerText.trim();
+      navigator.clipboard.writeText(promptText).then(() => {
+        const copyBtn = document.querySelector('.prompt-copy-btn');
+        copyBtn.innerText = '✅ ¡Copiado!';
+        copyBtn.style.color = 'var(--accent-green)';
+        setTimeout(() => {
+          copyBtn.innerText = '📋 Copiar';
+          copyBtn.style.color = 'var(--text-muted)';
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar al portapapeles: ', err);
+      });
+    }
+
+    // 4. Simulador Interactivo de Git Flow
+    const nodes = {
+      working: document.getElementById('node-working'),
+      staging: document.getElementById('node-staging'),
+      local: document.getElementById('node-local'),
+      remote: document.getElementById('node-remote')
+    };
+
+    const buttons = {
+      status: document.getElementById('btn-status'),
+      add: document.getElementById('btn-add'),
+      commit: document.getElementById('btn-commit'),
+      push: document.getElementById('btn-push'),
+      reset: document.getElementById('btn-reset-sim')
+    };
+
+    const consoleContent = document.getElementById('console-content');
+
+    let simState = 'idle'; // idle -> has_changes -> staged -> committed -> pushed
+
+    function writeConsole(cmd, output) {
+      const lineHtml = `
+        <div class="console-line">
+          <span class="console-prompt">taller-git@fiuba:~$</span> 
+          <span class="console-command">${cmd}</span>
+        </div>
+        <div class="console-line">
+          <span class="console-output">${output}</span>
+        </div>
+      `;
+      consoleContent.innerHTML += lineHtml;
+      // Scroll automático al final de la consola
+      consoleContent.scrollTop = consoleContent.scrollHeight;
+    }
+
+    function clearConsole() {
+      consoleContent.innerHTML = '';
+    }
+
+    // Comportamientos de los comandos del simulador
+    buttons.status.addEventListener('click', () => {
+      if (simState === 'idle') {
+        simState = 'has_changes';
+        writeConsole('git status', 
+`En la rama main
+Tu rama está al día con 'origin/main'.
+
+Archivos sin preparar para el commit:
+  (usa "git add <archivo>..." para incluirlo a lo que se enviará)
+\t<span style="color:#ef4444;">modificado:   index.html</span>
+\t<span style="color:#ef4444;">modificado:   hola_mundo.py</span>
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")`);
+      } else if (simState === 'has_changes') {
+        writeConsole('git status', 
+`En la rama main
+Cambios no preparados para el commit (los mismos archivos modificados).
+Usa git add para prepararlos.`);
+      } else if (simState === 'staged') {
+        writeConsole('git status',
+`En la rama main
+Cambios listos para ser comprometidos:
+  (usa "git restore --staged <archivo>..." para sacar del área de preparación)
+\t<span style="color:#10b981;">modificado:   index.html</span>
+\t<span style="color:#10b981;">modificado:   hola_mundo.py</span>`);
+      } else if (simState === 'committed') {
+        writeConsole('git status',
+`En la rama main
+Tu rama está adelantada a 'origin/main' por 1 commit.
+  (usa "git push" para publicar tus commits locales)
+
+nada para hacer commit, el árbol de trabajo está limpio`);
+      } else if (simState === 'pushed') {
+        writeConsole('git status',
+`En la rama main
+Tu rama está al día con 'origin/main'.
+
+nada para hacer commit, el árbol de trabajo está limpio`);
+      }
+    });
+
+    buttons.add.addEventListener('click', () => {
+      if (simState === 'idle' || simState === 'has_changes') {
+        simState = 'staged';
+        
+        // Animación visual de transición
+        nodes.working.classList.remove('active');
+        nodes.staging.classList.add('active');
+        
+        writeConsole('git add .', 
+`Se agregaron los archivos al área de Staging (preparación).
+Listo para guardar un commit.`);
+        
+        buttons.commit.disabled = false;
+        buttons.add.disabled = true;
+      }
+    });
+
+    buttons.commit.addEventListener('click', () => {
+      if (simState === 'staged') {
+        simState = 'committed';
+        
+        // Animación visual de transición
+        nodes.staging.classList.remove('active');
+        nodes.local.classList.add('active');
+        
+        writeConsole('git commit -m "Mi primer aporte al taller"', 
+`[main b8f2a1c] Mi primer aporte al taller
+ 2 files changed, 15 insertions(+), 2 deletions(-)
+ Commit guardado exitosamente en tu historial local.`);
+        
+        buttons.push.disabled = false;
+        buttons.commit.disabled = true;
+      }
+    });
+
+    buttons.push.addEventListener('click', () => {
+      if (simState === 'committed') {
+        simState = 'pushed';
+        
+        // Animación visual de transición
+        nodes.local.classList.remove('active');
+        nodes.remote.classList.add('active');
+        
+        writeConsole('git push', 
+`Subiendo objetos: 100% (5/5), completado.
+Resolviendo deltas: 100% (3/3), completado.
+To https://github.com/centrograduadosFIUBA/tallerHM.git
+   a2c4e1d..b8f2a1c  main -> main
+¡Felicidades! Tu aporte está en vivo en la nube de GitHub.`);
+        
+        buttons.push.disabled = true;
+      }
+    });
+
+    buttons.reset.addEventListener('click', () => {
+      simState = 'idle';
+      clearConsole();
+      
+      // Resetear nodos activos
+      Object.values(nodes).forEach(n => n.classList.remove('active'));
+      nodes.working.classList.add('active');
+      
+      // Resetear botones
+      buttons.add.disabled = false;
+      buttons.commit.disabled = true;
+      buttons.push.disabled = true;
+      
+      writeConsole('# Simulador reiniciado.', 'Modifica archivos locales y empieza de nuevo con "git status" o "git add .".');
+    });
+
+  </script>
+</body>
+</html>
