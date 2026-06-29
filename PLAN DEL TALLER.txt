@@ -1,0 +1,133 @@
+TALLER: HOLA, MUNDO CON GIT Y GITHUB
+Martes 23 de junio de 2026
+Comunidad FIUBA
+=======================================================================
+
+
+OBJETIVO
+--------
+Que todos los participantes, sin importar su nivel técnico, terminen el
+taller habiendo:
+
+  - Escrito o modificado un archivo (código, web o texto).
+  - Subido ese archivo a un repositorio compartido en GitHub.
+  - Visto en tiempo real cómo su contribución aparece junto a la de todos.
+
+
+=======================================================================
+PARTE 1: PREPARACION DEL ENTORNO
+=======================================================================
+
+Antes de arrancar, cada participante necesita tener instalado:
+
+  1. Git          -> https://git-scm.com
+  2. Python       -> https://python.org  (solo para los que hacen el .py)
+  3. Cuenta en GitHub -> https://github.com
+
+Claude Code (la IA) puede ayudar a instalar y configurar todo esto en
+cada PC si alguien no lo tiene.
+
+
+=======================================================================
+PARTE 2: CLONAR EL REPOSITORIO
+=======================================================================
+
+El docente crea el repositorio en GitHub al comienzo del taller.
+Cada participante lo clona en su PC con:
+
+    git clone https://github.com/centrograduadosFIUBA/tallerHM.git
+
+Esto descarga una copia del proyecto en su computadora.
+
+
+=======================================================================
+PARTE 3: CADA UNO ELIGE SU CAMINO
+=======================================================================
+
+Cada participante elige el tipo de archivo con el que quiere trabajar
+según lo que le resulte más natural:
+
+-----------------------------------------------------------------------
+OPCION A: Python  (hola_mundo.py)
+-----------------------------------------------------------------------
+Para los que quieren probar programación.
+
+El archivo ya existe en el repo como punto de partida.
+La tarea: modificarlo para que salude con su propio nombre o mensaje.
+
+Ejemplo base:
+    nombre = input("¿Cómo te llamás? ")
+    print(f"¡Hola, {nombre}! Bienvenido al taller.")
+
+Se corre desde la terminal con:
+    python hola_mundo.py
+
+
+-----------------------------------------------------------------------
+OPCION B: HTML + CSS  (index.html)
+-----------------------------------------------------------------------
+Para los que prefieren lo visual, sin instalar nada extra.
+
+El archivo ya existe en el repo como punto de partida.
+La tarea: cambiar el texto, el color o el diseño de la página.
+Se abre directamente en el navegador haciendo doble clic en el archivo.
+
+Muestra que las herramientas (Git, GitHub, Claude Code) no son solo
+para programadores: sirven para cualquier tipo de archivo.
+
+
+-----------------------------------------------------------------------
+OPCION C: Documentacion  (README.md)
+-----------------------------------------------------------------------
+Para los que vienen del lado de la redacción, gestión o comunicación.
+
+La tarea: editar el README.md y agregar su nombre en la sección
+"Participantes del taller".
+
+No requiere saber nada de código. Es simplemente editar un texto y
+subirlo. Igual de válido que las otras opciones.
+
+
+=======================================================================
+PARTE 4: SUBIR LOS CAMBIOS A GITHUB (colaboracion en vivo)
+=======================================================================
+
+Una vez hecho el cambio, cada participante lo sube al repo compartido:
+
+    git add .
+    git commit -m "Mi primer aporte al taller"
+    git push
+
+En este momento todos pueden ver en GitHub cómo el proyecto crece con
+la contribución de cada uno.
+
+Si hay conflictos (dos personas editaron el mismo archivo), se resuelven
+en vivo: es parte del aprendizaje.
+
+
+=======================================================================
+PARTE 5: CIERRE
+=======================================================================
+
+Al terminar, el repo tiene aportes de todos los participantes.
+Cada uno puede mostrarle a alguien "esto lo hice yo y está en internet".
+
+Mensaje clave del taller:
+
+  Git y GitHub no son herramientas solo para programadores.
+  Son herramientas de colaboración para cualquier persona que trabaje
+  con archivos: código, diseño, documentos, presentaciones.
+
+  Y con Claude Code como asistente, la barrera de entrada desaparece.
+
+
+=======================================================================
+ARCHIVOS DE EJEMPLO (ya preparados en esta carpeta)
+=======================================================================
+
+  - hola_mundo.py   -> base para la Opcion A
+  - index.html      -> base para la Opcion B
+  - README.md       -> base para la Opcion C
+
+Estos archivos se suben al repo al comienzo del taller por el docente,
+antes de que los participantes lo clonen.

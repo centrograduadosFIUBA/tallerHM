@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Alumno Estrella — El Ciclón</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #060612;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Lluvia de colores del Ciclón */
+    .rain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .drop {
+      position: absolute;
+      top: -20px;
+      width: 3px;
+      border-radius: 2px;
+      animation: fall linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); opacity: 0; }
+    }
+
+    /* Título animado */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .crown { font-size: 4rem; animation: bounce 1.5s ease-in-out infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin: 0.5rem 0;
+    }
+
+    .azul { color: #1a3bcc; text-shadow: 0 0 30px #1a3bcc; }
+    .rojo { color: #cc1a1a; text-shadow: 0 0 30px #cc1a1a; }
+
+    .rol {
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 1rem 0 2rem;
+    }
+
+    /* Estadio */
+    .estadio {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(26,59,204,0.15), rgba(204,26,26,0.15));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2rem;
+      padding: 2rem 3rem;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .cancha {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .frase {
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #1a3bcc, #cc1a1a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .badge-ciclon {
+      display: inline-block;
+      background: linear-gradient(90deg, #1a3bcc, #cc1a1a);
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(204,26,26,0.5); }
+      50% { box-shadow: 0 0 25px rgba(26,59,204,0.8), 0 0 50px rgba(204,26,26,0.4); }
+    }
+
+    .volver {
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+      color: #555;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .volver:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- Lluvia bicolor -->
+  <div class="rain" id="rain"></div>
+
+  <div class="hero">
+    <div class="crown">👑</div>
+    <h1>
+      <span class="azul">ALUMNO</span><br>
+      <span class="rojo">ESTRELLA</span>
+    </h1>
+    <div class="rol">Marketer · San Lorenzo de Almagro</div>
+  </div>
+
+  <div class="estadio">
+    <div class="cancha">🏟️</div>
+    <div class="frase">"Cuervo hasta el cajón.<br>Y después que me entierren con la camiseta."</div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Amor al Ciclón</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Solo hay un club</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">🔵🔴</div>
+        <div class="stat-label">Colores eternos</div>
+      </div>
+    </div>
+
+    <span class="badge-ciclon">⚽ El Ciclón de Boedo</span>
+  </div>
+
+  <a href="/" class="volver">← Volver al taller</a>
+
+  <script>
+    // Generar lluvia bicolor
+    const rain = document.getElementById('rain');
+    for (let i = 0; i < 60; i++) {
+      const drop = document.createElement('div');
+      drop.className = 'drop';
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.height = (Math.random() * 60 + 20) + 'px';
+      drop.style.background = Math.random() > 0.5 ? '#1a3bcc' : '#cc1a1a';
+      drop.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      drop.style.animationDelay = (Math.random() * 3) + 's';
+      rain.appendChild(drop);
+    }
+  </script>
+</body>
+</html>
